@@ -1,29 +1,17 @@
-<p align="center">
-  <br>
-  <b>创造不息，交付不止</b>
-  <br>
-  <a href="https://www.yousails.com">
-    <img src="https://yousails.com/banners/brand.png" width=350>
-  </a>
-</p>
-
 ## Intro
 
 * 中文讨论请前往：https://phphub.org/topics/2301
 * 中文教程见这里：https://phphub.org/topics/2407
 
 
-Forked from [FrozenNode/Laravel-Administrator](https://github.com/FrozenNode/Laravel-Administrator) with the following changes:
+Forked from [summerblue/administrator](https://github.com/summerblue/administrator) with the following changes:
 
-* UI Improved
-* UX Improved (Editor view stick, hover effect etc.)
-* Model deletion with Sweet alert confirmation
-* Batch model deletion
-* Refresh btn
-* Reduce page css and js file request number
-* Edit view hint
+* Support over Laravel 5.4.*
+	+ different between [Illuminate/Database/Eloquent/Relations/BelongsToMany::getForeignKey](https://laravel.com/api/5.3/Illuminate/Database/Eloquent/Relations/BelongsToMany.html#method_getForeignKey) and [Illuminate/Database/Eloquent/Relations/BelongsToMany::getQualifiedForeignKeyName](https://laravel.com/api/5.4/Illuminate/Database/Eloquent/Relations/BelongsToMany.html#method_getQualifiedForeignKeyName)
+	+ different between [Illuminate/Database/Eloquent/Relations/BelongsToMany::getOtherKey](https://laravel.com/api/5.3/Illuminate/Database/Eloquent/Relations/BelongsToMany.html#method_getOtherKey) and [Illuminate/Database/Eloquent/Relations/BelongsToMany::getQualifiedRelatedKeyName](https://laravel.com/api/5.4/Illuminate/Database/Eloquent/Relations/BelongsToMany.html#method_getQualifiedRelatedKeyName)
+	+ different between [Illuminate/Database/Eloquent/Relations/BelongsTo::getOtherKey](https://laravel.com/api/5.3/Illuminate/Database/Eloquent/Relations/BelongsTo.html#method_getOtherKey) and [Illuminate/Database/Eloquent/Relations/BelongsTo::getOwnerKey](https://laravel.com/api/5.4/Illuminate/Database/Eloquent/Relations/BelongsTo.html#method_getOwnerKey)
+	+ different between [Illuminate/Database/Eloquent/Relations/HasOneOrMany::getPlainForeignKey](https://laravel.com/api/5.3/Illuminate/Database/Eloquent/Relations/HasOneOrMany.html#method_getPlainForeignKey) and [Illuminate/Database/Eloquent/Relations/HasOneOrMany::getForeignKeyName](https://laravel.com/api/5.4/Illuminate/Database/Eloquent/Relations/HasOneOrMany.html#method_getForeignKeyName)
 
-> only intent to support Laravel 5.1.*
 
 ![1](https://cloud.githubusercontent.com/assets/324764/16544619/6db648d0-413f-11e6-8842-bf0b993416ef.png)
 
