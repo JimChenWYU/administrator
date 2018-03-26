@@ -22,7 +22,7 @@ Forked from [summerblue/administrator](https://github.com/summerblue/administrat
 ### 1. composer require
 
 ```
-composer require "summerblue/administrator:^1.1"
+composer require "jimchen/administrator:^1.0"
 ```
 
 ### 2. add provider
