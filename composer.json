@@ -1,5 +1,5 @@
 {
-	"name": "summerblue/administrator",
+	"name": "jimchen/administrator",
 	"description": "A database interface package for Laravel, modified!",
 	"homepage": "https://github.com/summerblue/administrator",
 	"keywords": ["administrator", "admin", "database", "laravel-administrator", "laravel", "cms"],
@@ -11,7 +11,7 @@
 		}
 	],
 	"support": {
-		"issues": "https://github.com/summerblue/administrator/issues"
+		"issues": "https://github.com/jimchen/administrator/issues"
 	},
 	"require": {
 		"php": ">=7.0.0",
