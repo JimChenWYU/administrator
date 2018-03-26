@@ -32,8 +32,14 @@ class BelongsToMany extends Relationship
         $relatedModel = $relationship->getRelated();
 
         $options['table']       = $relationship->getTable();
-        $options['column']      = $relationship->getQualifiedForeignPivotKeyName();
-        $options['column2']     = $relationship->getQualifiedRelatedPivotKeyName();
+        $options['column']      = $this->compatible(
+                                        $relationship->getForeignKey(),
+                                        $relationship->getQualifiedForeignPivotKeyName()
+                                    );
+        $options['column2']     = $this->compatible(
+                                        $relationship->getOtherKey(),
+                                        $relationship->getQualifiedRelatedPivotKeyName()
+                                    );
         $options['foreign_key'] = $relatedModel->getKeyName();
 
         $this->suppliedOptions = $options;

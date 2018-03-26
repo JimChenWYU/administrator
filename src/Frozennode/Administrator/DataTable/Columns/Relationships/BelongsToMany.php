@@ -33,7 +33,10 @@ class BelongsToMany extends Relationship
         $other_key    = $other_model->getKeyName();
         $int_table    = $this->tablePrefix.$relationship->getTable();
         $int_alias    = $columnName.'_'.$int_table;
-        $column1      = explode('.', $relationship->getForeignKey());
+        $column1      = explode('.', $this->compatible(
+                                                $relationship->getForeignKey(),
+                                                $relationship->getQualifiedForeignPivotKeyName())
+                        );
         $column1      = $column1[1];
         $column2      = explode('.', $relationship->getOtherKey());
         $column2      = $column2[1];
