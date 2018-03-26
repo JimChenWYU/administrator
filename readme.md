@@ -4,7 +4,7 @@
 * 中文教程见这里：https://phphub.org/topics/2407
 
 
-Forked from [summerblue/administrator](https://github.com/summerblue/administrator) with the following changes:
+Forked from [jimchen/administrator](https://github.com/JimChenWYU/administrator) with the following changes:
 
 * Support over Laravel 5.4.*
 	+ different between [Illuminate/Database/Eloquent/Relations/BelongsToMany::getForeignKey](https://laravel.com/api/5.3/Illuminate/Database/Eloquent/Relations/BelongsToMany.html#method_getForeignKey) and [Illuminate/Database/Eloquent/Relations/BelongsToMany::getQualifiedForeignKeyName](https://laravel.com/api/5.4/Illuminate/Database/Eloquent/Relations/BelongsToMany.html#method_getQualifiedForeignKeyName)
