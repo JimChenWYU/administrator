@@ -101,7 +101,7 @@ class BelongsTo extends Relationship
                 $alias              = $columnName.'_'.$table;
                 $last_alias         = $columnName.'_'.$this->tablePrefix.$model->getTable();
                 $joins .= ' LEFT JOIN '.$table.' AS '.$alias.
-                            ' ON '.$alias.'.'.$relationship->getOtherKey().
+                            ' ON '.$alias.'.'.$this->compatible($relationship->getOtherKey(), $relationship->getOwnerKey()).
                                 ' = '.$last_alias.'.'.$relationship->getForeignKey();
             }
         }
@@ -115,7 +115,10 @@ class BelongsTo extends Relationship
 
         $where = $this->tablePrefix.$first_model->getTable().'.'.$first_relationship->getForeignKey().
                     ' = '.
-                    $field_table.'.'.$first_relationship->getOtherKey();
+                    $field_table.'.'.$this->compatible(
+                        $first_relationship->getOtherKey(),
+                        $first_relationship->getOwnerKey()
+                    );
 
         $selects[] = $this->db->raw('(SELECT '.$this->getOption('select').'
 										FROM '.$from_table.' AS '.$field_table.' '.$joins.'
