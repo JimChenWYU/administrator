@@ -35,7 +35,10 @@ class HasMany extends HasOneOrMany
         $relationship = $model->{$fieldName}();
 
         // get the plain foreign key so we can set it to null:
-        $fkey = $relationship->getPlainForeignKey();
+        $fkey = $this->compatible(
+            $relationship->getPlainForeignKey(),
+            $relationship->getForeignKeyName()
+        );
 
         $relatedObjectClass = get_class($relationship->getRelated());
 
