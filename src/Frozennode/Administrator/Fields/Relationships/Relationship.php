@@ -2,10 +2,13 @@
 
 namespace Frozennode\Administrator\Fields\Relationships;
 
+use Frozennode\Administrator\CompatibleTrait;
 use Frozennode\Administrator\Fields\Field;
 
 abstract class Relationship extends Field
 {
+    use CompatibleTrait;
+
     /**
      * The specific defaults for subclasses to override.
      *

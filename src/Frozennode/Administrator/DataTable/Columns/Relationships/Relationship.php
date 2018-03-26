@@ -2,6 +2,7 @@
 
 namespace Frozennode\Administrator\DataTable\Columns\Relationships;
 
+use Frozennode\Administrator\CompatibleTrait;
 use Frozennode\Administrator\DataTable\Columns\Column;
 
 /**
@@ -10,6 +11,7 @@ use Frozennode\Administrator\DataTable\Columns\Column;
  */
 class Relationship extends Column
 {
+    use CompatibleTrait;
     /**
      * The specific defaults for subclasses to override.
      *
