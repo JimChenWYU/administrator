@@ -29,7 +29,7 @@ View::composer('administrator::index', function ($view) {
     $view->rows = $dataTable->getRows(app('db'), $view->filters);
     $view->formWidth = $config->getOption('form_width');
     $view->baseUrl = $baseUrl;
-    $view->assetUrl = url('packages/summerblue/administrator/');
+    $view->assetUrl = url('packages/jimchen/administrator/');
     $view->route = $route['path'].'/';
     $view->itemId = isset($view->itemId) ? $view->itemId : null;
 });
@@ -48,7 +48,7 @@ View::composer('administrator::settings', function ($view) {
     $view->arrayFields = $fieldFactory->getEditFieldsArrays();
     $view->actions = $actionFactory->getActionsOptions();
     $view->baseUrl = $baseUrl;
-    $view->assetUrl = url('packages/summerblue/administrator/');
+    $view->assetUrl = url('packages/jimchen/administrator/');
     $view->route = $route['path'].'/';
 });
 
@@ -69,46 +69,46 @@ View::composer(array('administrator::layouts.default'), function ($view) {
     $view->css = array();
     $view->myjs = array();
     $view->js = array(
-        'jquery'         => '/packages/summerblue/administrator/js/jquery.min.js',
-        'jquery-migrate' => '/packages/summerblue/administrator/js/jquery-migrate.min.js',
-        'jquery-ui'      => asset('packages/summerblue/administrator/js/jquery/jquery-ui-1.10.3.custom.min.js'),
-        'customscroll'   => asset('packages/summerblue/administrator/js/jquery/customscroll/jquery.customscroll.js'),
+        'jquery'         => '/packages/jimchen/administrator/js/jquery.min.js',
+        'jquery-migrate' => '/packages/jimchen/administrator/js/jquery-migrate.min.js',
+        'jquery-ui'      => asset('packages/jimchen/administrator/js/jquery/jquery-ui-1.10.3.custom.min.js'),
+        'customscroll'   => asset('packages/jimchen/administrator/js/jquery/customscroll/jquery.customscroll.js'),
     );
 
 
     //add the non-custom-page css assets
     if (!$view->page && !$view->dashboard) {
         $view->css += array(
-            'jquery-ui'            => asset('packages/summerblue/administrator/css/ui/jquery-ui-1.9.1.custom.min.css'),
-            'jquery-ui-timepicker' => asset('packages/summerblue/administrator/css/ui/jquery.ui.timepicker.css'),
-            'select2'              => asset('packages/summerblue/administrator/js/jquery/select2/select2.css'),
-            'jquery-colorpicker'   => asset('packages/summerblue/administrator/css/jquery.lw-colorpicker.css'),
+            'jquery-ui'            => asset('packages/jimchen/administrator/css/ui/jquery-ui-1.9.1.custom.min.css'),
+            'jquery-ui-timepicker' => asset('packages/jimchen/administrator/css/ui/jquery.ui.timepicker.css'),
+            'select2'              => asset('packages/jimchen/administrator/js/jquery/select2/select2.css'),
+            'jquery-colorpicker'   => asset('packages/jimchen/administrator/css/jquery.lw-colorpicker.css'),
         );
     }
 
     //add the package-wide css assets
     $view->css += array(
-        'customscroll' => asset('packages/summerblue/administrator/js/jquery/customscroll/customscroll.css'),
-        'main'         => asset('packages/summerblue/administrator/css/main.css'),
+        'customscroll' => asset('packages/jimchen/administrator/js/jquery/customscroll/customscroll.css'),
+        'main'         => asset('packages/jimchen/administrator/css/main.css'),
 
-        'main-extended' => asset('packages/summerblue/administrator/css/main-extended.css'),
+        'main-extended' => asset('packages/jimchen/administrator/css/main-extended.css'),
     );
 
     //add the non-custom-page js assets
     if (!$view->page && !$view->dashboard) {
         $view->js += array(
-            'select2'              => asset('packages/summerblue/administrator/js/jquery/select2/select2.js'),
-            'jquery-ui-timepicker' => asset('packages/summerblue/administrator/js/jquery/jquery-ui-timepicker-addon.js'),
-            'ckeditor'             => asset('packages/summerblue/administrator/js/ckeditor/ckeditor.js'),
-            'ckeditor-jquery'      => asset('packages/summerblue/administrator/js/ckeditor/adapters/jquery.js'),
-            'markdown'             => asset('packages/summerblue/administrator/js/markdown.js'),
-            'plupload'             => asset('packages/summerblue/administrator/js/plupload/js/plupload.full.js'),
+            'select2'              => asset('packages/jimchen/administrator/js/jquery/select2/select2.js'),
+            'jquery-ui-timepicker' => asset('packages/jimchen/administrator/js/jquery/jquery-ui-timepicker-addon.js'),
+            'ckeditor'             => asset('packages/jimchen/administrator/js/ckeditor/ckeditor.js'),
+            'ckeditor-jquery'      => asset('packages/jimchen/administrator/js/ckeditor/adapters/jquery.js'),
+            'markdown'             => asset('packages/jimchen/administrator/js/markdown.js'),
+            'plupload'             => asset('packages/jimchen/administrator/js/plupload/js/plupload.full.js'),
         );
 
         $view->myjs += array(
-            'ckeditor'             => asset('packages/summerblue/administrator/js/ckeditor/ckeditor.js'),
-            'ckeditor-jquery'      => asset('packages/summerblue/administrator/js/ckeditor/adapters/jquery.js'),
-            'plupload'             => asset('packages/summerblue/administrator/js/plupload/js/plupload.full.js'),
+            'ckeditor'             => asset('packages/jimchen/administrator/js/ckeditor/ckeditor.js'),
+            'ckeditor-jquery'      => asset('packages/jimchen/administrator/js/ckeditor/adapters/jquery.js'),
+            'plupload'             => asset('packages/jimchen/administrator/js/plupload/js/plupload.full.js'),
         );
 
         //localization js assets
@@ -116,27 +116,27 @@ View::composer(array('administrator::layouts.default'), function ($view) {
 
         if ($locale !== 'en') {
             $view->myjs += array(
-                'plupload-l18n'   => asset('packages/summerblue/administrator/js/plupload/js/i18n/'.$locale.'.js'),
-                'timepicker-l18n' => asset('packages/summerblue/administrator/js/jquery/localization/jquery-ui-timepicker-'.$locale.'.js'),
-                'datepicker-l18n' => asset('packages/summerblue/administrator/js/jquery/i18n/jquery.ui.datepicker-'.$locale.'.js'),
-                'select2-l18n'    => asset('packages/summerblue/administrator/js/jquery/select2/select2_locale_'.$locale.'.js'),
+                'plupload-l18n'   => asset('packages/jimchen/administrator/js/plupload/js/i18n/'.$locale.'.js'),
+                'timepicker-l18n' => asset('packages/jimchen/administrator/js/jquery/localization/jquery-ui-timepicker-'.$locale.'.js'),
+                'datepicker-l18n' => asset('packages/jimchen/administrator/js/jquery/i18n/jquery.ui.datepicker-'.$locale.'.js'),
+                'select2-l18n'    => asset('packages/jimchen/administrator/js/jquery/select2/select2_locale_'.$locale.'.js'),
             );
         }
 
         //remaining js assets
         $view->js += array(
-            'knockout'                 => asset('packages/summerblue/administrator/js/knockout/knockout-2.2.0.js'),
-            'knockout-mapping'         => asset('packages/summerblue/administrator/js/knockout/knockout.mapping.js'),
-            'knockout-notification'    => asset('packages/summerblue/administrator/js/knockout/KnockoutNotification.knockout.min.js'),
-            'knockout-update-data'     => asset('packages/summerblue/administrator/js/knockout/knockout.updateData.js'),
-            'knockout-custom-bindings' => asset('packages/summerblue/administrator/js/knockout/custom-bindings.js'),
-            'accounting'               => asset('packages/summerblue/administrator/js/accounting.js'),
-            'colorpicker'              => asset('packages/summerblue/administrator/js/jquery/jquery.lw-colorpicker.min.js'),
-            'history'                  => asset('packages/summerblue/administrator/js/history/native.history.js'),
-            'admin'                    => asset('packages/summerblue/administrator/js/admin.js'),
-            'settings'                 => asset('packages/summerblue/administrator/js/settings.js'),
+            'knockout'                 => asset('packages/jimchen/administrator/js/knockout/knockout-2.2.0.js'),
+            'knockout-mapping'         => asset('packages/jimchen/administrator/js/knockout/knockout.mapping.js'),
+            'knockout-notification'    => asset('packages/jimchen/administrator/js/knockout/KnockoutNotification.knockout.min.js'),
+            'knockout-update-data'     => asset('packages/jimchen/administrator/js/knockout/knockout.updateData.js'),
+            'knockout-custom-bindings' => asset('packages/jimchen/administrator/js/knockout/custom-bindings.js'),
+            'accounting'               => asset('packages/jimchen/administrator/js/accounting.js'),
+            'colorpicker'              => asset('packages/jimchen/administrator/js/jquery/jquery.lw-colorpicker.min.js'),
+            'history'                  => asset('packages/jimchen/administrator/js/history/native.history.js'),
+            'admin'                    => asset('packages/jimchen/administrator/js/admin.js'),
+            'settings'                 => asset('packages/jimchen/administrator/js/settings.js'),
         );
     }
 
-    $view->js += array('page' => asset('packages/summerblue/administrator/js/page.js'));
+    $view->js += array('page' => asset('packages/jimchen/administrator/js/page.js'));
 });
